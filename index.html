@@ -1,137 +1,14 @@
+<script>
+async function extrairConteudo(url) {
+  try {
+    const response = await fetch(`https://api.allorigins.win/raw?url=${encodeURIComponent(url)}`);
+    const html = await response.text();
 
-<!DOCTYPE html>
-<html lang="pt-BR">
-<head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CEA - Centro de Educação Ambiental e Responsabilidade Social</title>
-<style>
-body {
-    margin: 0;
-    font-family: Arial, Helvetica, sans-serif;
-    background: #f4f7f6;
-    color: #333;
+    console.log("Conteúdo carregado:", html);
+
+    return html;
+  } catch (erro) {
+    console.error("Erro ao carregar link:", erro);
+  }
 }
-
-header {
-    background: linear-gradient(90deg, #1f7a5c, #38a169);
-    color: white;
-    padding: 40px 20px;
-    text-align: center;
-}
-
-header h1 {
-    margin: 0;
-    font-size: 28px;
-}
-
-header p {
-    margin-top: 10px;
-    font-size: 16px;
-}
-
-section {
-    padding: 40px 20px;
-    max-width: 900px;
-    margin: auto;
-}
-
-h2 {
-    color: #1f7a5c;
-}
-
-.card {
-    background: white;
-    padding: 20px;
-    margin-bottom: 20px;
-    border-radius: 10px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.btn {
-    display: inline-block;
-    padding: 12px 20px;
-    background: #1f7a5c;
-    color: white;
-    text-decoration: none;
-    border-radius: 8px;
-    margin-top: 10px;
-}
-
-.btn:hover {
-    background: #166b4a;
-}
-
-.pix-box {
-    text-align: center;
-    margin-top: 20px;
-}
-
-footer {
-    background: #1f7a5c;
-    color: white;
-    text-align: center;
-    padding: 20px;
-    font-size: 14px;
-}
-</style>
-</head>
-
-<body>
-
-<header>
-    <h1>CEA - Centro de Educação Ambiental e Responsabilidade Social</h1>
-    <p>Transformando vidas por meio da educação, assistência social e cuidado com o meio ambiente.</p>
-    <a href="#doacao" class="btn">Faça sua Doação</a>
-</header>
-
-<section>
-    <h2>Nossas Causas</h2>
-
-    <div class="card">
-        <h3>💚 Apoio ao Tratamento Oncológico</h3>
-        <p>Contribua com tratamentos, medicamentos, apoio emocional e dignidade a quem enfrenta o câncer.</p>
-    </div>
-
-    <div class="card">
-        <h3>📚 Acesso à Leitura</h3>
-        <p>Doação de livros para crianças, jovens e famílias em situação de vulnerabilidade.</p>
-    </div>
-
-    <div class="card">
-        <h3>🤝 Acolher e Cuidar</h3>
-        <p>Apoio social, inclusão e assistência às comunidades em situação de risco.</p>
-    </div>
-
-    <div class="card">
-        <h3>🌎 Causa Ambiental</h3>
-        <p>Preservação ambiental, educação ecológica e ações sustentáveis.</p>
-    </div>
-
-    <div class="card">
-        <h3>🐾 Missão Patas</h3>
-        <p>Resgate, alimentação, tratamento e proteção dos animais.</p>
-    </div>
-</section>
-
-<section id="doacao">
-    <h2>Faça sua Doação via Pix</h2>
-
-    <div class="card pix-box">
-        <p><strong>Chave Pix:</strong></p>
-        <p>doacao@oscipcea.org.br</p>
-
-        <p>As doações realizadas por meio desta chave Pix podem ser dedutíveis do Imposto de Renda, observados os limites legais.</p>
-
-        <p>Para informações sobre doação dedutível:</p>
-        <p>📞 (61) 9914-1456 | (11) 96538-0231</p>
-        <p>📧 doacao@oscipcea.org.br</p>
-    </div>
-</section>
-
-<footer>
-    © 2026 CEA - Centro de Educação Ambiental e Responsabilidade Social | Todos os direitos reservados.
-</footer>
-
-</body>
-</html>
+</script>
